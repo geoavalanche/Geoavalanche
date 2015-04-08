@@ -6,3 +6,23 @@
   text-indent: -9999em;
   width: 140px;
 }
+
+body.layers li#nav_layers a {
+  color: rgb(140, 255, 255);
+}
+
+body.maps li#nav_maps a {
+  color: rgb(140, 255, 255);
+}
+
+body.documents li#nav_documents a {
+  color: rgb(140, 255, 255);
+}
+
+body.people li#nav_people a {
+  color: rgb(140, 255, 255);
+}
+
+body.groups li#nav_groups a {
+  color: rgb(140, 255, 255);
+}
