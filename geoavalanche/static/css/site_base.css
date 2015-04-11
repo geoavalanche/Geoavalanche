@@ -1,28 +1,56 @@
 .navbar-brand {
-  background: url(../img/logo_ga.png) 15px 0 no-repeat;
-  height: 40px;
+  background: url(../img/logo_ga.png) 0px 0 no-repeat;
+  height: 70px;
   margin-right: 15px;
   margin-top: 10px;
   text-indent: -9999em;
-  width: 140px;
+  width: 150px;
 }
 
+/* adjust top padding of geoexplorer.js
+ * doesn't override from here, need to tweak from map_geoexplorer.css of master geonode
+#paneltbar {
+  margin-top: 71px;
+}*/
+
+/* adjust top margin for account button */
+ul.nav.navbar-nav.navbar-right {
+  margin-top: -18px;
+}
+
+/* rounded corner for images */
+.items-list .thumb img {
+  border: 1px solid #CCC;
+  width: 100%;
+  border-radius: 3px;
+}
+
+/* Navigation menu colored when selected */
 body.layers li#nav_layers a {
-  color: rgb(140, 255, 255);
+  background-color: #1F9EE5;
+  padding: 25px;
 }
 
 body.maps li#nav_maps a {
-  color: rgb(140, 255, 255);
+  background-color: #1F9EE5;
+  padding: 25px;
 }
 
 body.documents li#nav_documents a {
-  color: rgb(140, 255, 255);
+  background-color: #1F9EE5;
+  padding: 25px;
 }
 
 body.people li#nav_people a {
-  color: rgb(140, 255, 255);
+  background-color: #1F9EE5;
+  padding: 25px;
 }
 
 body.groups li#nav_groups a {
-  color: rgb(140, 255, 255);
+  background-color: #1F9EE5;
+  padding: 25px;
+}
+
+.home-facets a:hover {
+  color: #1890D2;
 }
