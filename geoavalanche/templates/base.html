@@ -1,10 +1,11 @@
 {% load i18n avatar_tags %}
+{% load twitter_tag %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
     {% block head %}
       {% if DEBUG_STATIC %}
@@ -33,7 +34,7 @@
       </style>
     <![endif]-->
   </head>
-  
+
   <body class="{% block body_class %}{% endblock %}">
 
     {% block header %}
@@ -97,7 +98,7 @@
             {% else %}
             <li>
               <a href="#" data-toggle="modal" data-target="#SigninModal" role="button" >
-                {% trans "Sign in" %} 
+                {% trans "Sign in" %}
               </a>
             </li>
             {% endif %}
@@ -132,34 +133,109 @@
     </div>
     {% endblock middle %}
   </div>
-    
+
     {% block footer %}
     <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            {% trans "Powered by" %} <a href="http://geonode.org">{% trans "GeoNode" %}</a> <em>{% trans "version" %} {{ VERSION }}</em> |
-            <a href="{% url "developer" %}">{% trans "Developers" %}</a> |
-            <a href="{% url "about" %}">{% trans "About" %}</a>
-          </div>
-          <div class="col-md-4">
-            <label class="hidden">{% trans "Language" %}</label>
-            {% if csrf_token != "NOTPROVIDED" %}
-            {% get_current_language as LANGUAGE %}
-            <form class="form-inline" action="/i18n/setlang/" method="post">
-            {% csrf_token %}
-              <select class="col-md-6 pull-right" name="language" onchange="javascript:form.submit()">
-                {% for lang in LANGUAGES %}
-                <option value="{{ lang.0 }}" {% ifequal LANGUAGE_CODE lang.0 %} selected="selected"{% endifequal %}>
-                  {{ lang.1 }}
-                </option>
-                {% endfor %}
-              </select>
-            </form>
-            {% endif %}
+      <section id="mainFooter">
+        <div class="container">
+        	<div class="row">
+        	    <div class="col-lg-2">
+        	      <h4>Apps</h4> <!-- #@TODO Add translation -->
+        	      <p>
+              		<a href="#"> Lorem Ipsum </a> <!-- #@TODO Add translation -->
+              		<br>
+              		<a href="#"> Lorem Ipsum </a> <!-- #@TODO Add translation -->
+              		<br>
+              		<a href="#"> Lorem Ipsum </a> <!-- #@TODO Add translation -->
+              		<br>
+              		<a href="#"> Lorem Ipsum </a> <!-- #@TODO Add translation -->
+                </p>
+        	    </div>
+        	    <div class="col-lg-5">
+              	<h4>Contact us</h4> <!-- #@TODO Add translation -->
+         	      <div class="form-group col-lg-12">
+        		        <label for="contact-name" class="col-lg-2 control-label">Name</label>  <!-- #@TODO Add translation -->
+        			      <div class="col-lg-10">
+        				        <input class="form-control" id="contact-name" placeholder="Name" type="text">
+        					  </div>
+        				</div>
+        			  <div class="form-group col-lg-12">
+        						<label for="contact-email" class="col-lg-2 control-label">Email address</label> <!-- #@TODO Add translation -->
+  				          <div class="col-lg-10">
+  						          <input class="form-control" id="contact-email" placeholder="Email address" type="email">
+  							    </div>
+        				</div>
+    					  <div class="form-group col-lg-12">
+  						      <label for="contact-message" class="col-lg-2 control-label">Message</label> <!-- #@TODO Add translation -->
+  						      <div class="col-lg-10">
+  								      <textarea name="contact-message" id="contact-message" class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
+  								  </div>
+  							</div>
+    			      <div class="form-group col-lg-12">
+  				          <div class="col-lg-10 col-lg-offset-2">
+  						          <button type="submit" class="btn btn-primary">Send Message</button> <!-- #@TODO Add translation -->
+  							    </div>
+    						</div>
+        	    </div>
+        	    <div class="col-lg-3">
+                <h4>Latest tweets </h4>
+                <p>
+                  {% get_tweets for "geoavalanche" as tweets limit 5 %}
+                  {% for tweet in tweets %}
+                   <div><p>{{ tweet.html|safe }}</div></p>
+                  {% endfor %}
+                </p>
+        	    </div> 
+        	    <div class="col-lg-2">
+        	      <h4>GeoAvalanche</h4>
+        	      <p>
+              		<a href="{% url "about" %}">{% trans "About" %}</a>
+              		<br>
+              		<a href="{% url "developer" %}">{% trans "Developers" %}</a>
+                </p>
+                <h4>Follow us, we are social</h4> <!-- #@TODO Add translation -->
+                <p>
+                    <a href="https://www.facebook.com/geoavalanche" class="btn btn-social-icon btn-facebook" title="follow me on Facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com/geoavalanche" class="btn btn-social-icon btn-twitter" title="follow me on Twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="https://plus.google.com/+GeoAvalanche-page" class="btn btn-social-icon btn-google-plus" title="follow me on Google+"><i class="fa fa-google-plus"></i></a> <!-- #@TODO Create Google+ page -->
+                    <a href="https://github.com/geoavalanche" class="btn btn-social-icon btn-github" title="follow me on Github"><i class="fa fa-github"></i></a>
+                </p>
+              </div>
+        	</div>
+        </div>
+      </section>
+      <section id="footerRights">
+        <div class="col-xs-12">
+            <hr>
+        </div> 
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5">
+              <p class="copyright">Copyright © 2014 <a href="http://www.geobeyond.it" target="blank">Geobeyond Srl</a> / All rights reserved.
+              </p>
+            </div>
+            <div class="col-md-5 pull-left">
+              {% trans "Powered by" %} <a href="http://geonode.org">{% trans "GeoNode" %}</a> <em>{% trans "version" %} {{ VERSION }}</em>
+            </div>
+            <div class="col-md-2 pull-left">
+              <label class="hidden">{% trans "Language" %}</label>
+              {% if csrf_token != "NOTPROVIDED" %}
+              {% get_current_language as LANGUAGE %}
+              <form class="form-inline" action="/i18n/setlang/" method="post">
+              {% csrf_token %}
+                <select class="col-md-10 pull-right" name="language" onchange="javascript:form.submit()">
+                  {% for lang in LANGUAGES %}
+                  <option value="{{ lang.0 }}" {% ifequal LANGUAGE_CODE lang.0 %} selected="selected"{% endifequal %}>
+                    {{ lang.1 }}
+                  </option>
+                  {% endfor %}
+                </select>
+              </form>
+              {% endif %}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </footer>
     {% endblock footer %}
 
@@ -242,7 +318,7 @@
     </div>
     {% endif %}
     <!-- End of Modal -->
-    
+
     {% if DEBUG_STATIC %}
     <script src="{{ STATIC_URL }}lib/js/jquery.min.js"></script>
     <script src="{{ STATIC_URL }}lib/js/jquery.dataTables.js"></script>
