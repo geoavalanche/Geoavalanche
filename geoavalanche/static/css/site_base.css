@@ -51,6 +51,10 @@ body.groups li#nav_groups a {
   padding: 25px;
 }
 
+.navbar-right>li>a{
+  margin-top: 10px;
+}
+
 .home-facets a:hover {
   color: #1890D2;
 }
@@ -65,6 +69,14 @@ body.groups li#nav_groups a {
 /* Customize Contact Us form */
 div.form-group.col-lg-12 {
   margin-left: -30px;
+}
+
+div.col-lg-10 {
+  width: 74%;
+}
+
+#btncontact {
+  margin-left: 35px;
 }
 
 /* Add line to divide footer */

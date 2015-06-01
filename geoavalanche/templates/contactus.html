@@ -1,0 +1,48 @@
+{% load i18n %}
+<!-- {% block extra_head %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/mymodal.js"></script>
+{% endblock %} -->
+
+<form id="contact" action="contact/" method="post" accept-charset="utf-8">
+{% csrf_token %}
+<div class="col-lg-5">
+	<h4>Contact us</h4> <!-- #@TODO Add translation -->
+	<div class="form-group col-lg-12">
+		<label for="contact-name" class="col-lg-2 control-label">Name</label>  <!-- #@TODO Add translation -->
+		<div class="col-lg-10">
+			<input class="form-control" name="contact-name" id="contact-name" placeholder="Name" type="text">
+		</div>
+	</div>
+	<div class="form-group col-lg-12">
+		<label for="contact-email" class="col-lg-2 control-label">Email address</label> <!-- #@TODO Add translation -->
+		<div class="col-lg-10">
+			<input class="form-control" name="contact-email" id="contact-email" placeholder="Email address" type="email">
+		</div>
+	</div>
+	<div class="form-group col-lg-12">
+		<label for="contact-message" class="col-lg-2 control-label">Message</label> <!-- #@TODO Add translation -->
+		<div class="col-lg-10">
+			<textarea name="contact-message" id="contact-message" class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
+		</div>
+	</div>
+	<div class="form-group col-lg-12">
+		<div class="col-lg-10 col-lg-offset-2">
+			<button id="btncontact" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#thanks">Send Message</button> <!-- #@TODO Add translation -->
+		</div>
+	</div>
+</div>
+</form>
+
+<!-- Modal -->
+<div class="modal fade" id="thanks" tabindex="-1" role="dialog" aria-labelledby="thanksLabel" aria-hidden="true"> 
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+    	<h2>Thanks for contacting us!</h2>
+	    <!-- <button type="button" action="" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button> -->
+	    <!-- #@TODO Add translation and handle ok button for redirecting to original page -->
+	    <h4 class="modal-title">Message sent</h4>
+    </div>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
