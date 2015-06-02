@@ -1,0 +1,25 @@
+{% block extra_head %}
+<link href="{{ STATIC_URL }}geonode/css/social_twitter.css" rel="stylesheet" />
+<link href="{{ STATIC_URL }}css/social-share-buttons.css" rel="stylesheet" />
+{% endblock %}
+
+{% block social_links %}
+	<article class="tab-pane" id="share">
+        <!-- TODO: Move this to a reusable template snippet -->
+        <header>
+            <h3>Share This {{ resource.class_name }} </h3>
+        </header>
+        <div class="essb_links essb_displayed_shortcode essb_template_flat-retina essb_1130533103">
+              <!-- <ul class="social"> -->
+              <ul class="essb_links_list">
+                  {% for social_link in social_links %}
+                      {% if social_link.url %}
+                      <!-- #@TODO extract .label in lowercase -->
+                      <li class="essb_item essb_link_{{ social_link.label }} nolightbox"><a href="{{ social_link.url }}" class="{{ social_link.css_class }}">{{ social_link.label }}</a></li>
+                      {% endif %}
+                  {% endfor %}
+              </ul>
+         </div>
+        <!-- TODO: Add more sharing options -->
+    </article>
+{% endblock %}
