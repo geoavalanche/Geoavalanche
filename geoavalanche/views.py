@@ -1,8 +1,11 @@
 import json
 
+from geoavalanche import settings
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, render_to_response
+
+GEOAVALANCHE_EMAIL_ADDRESS = settings.GEOAVALANCHE_EMAIL_ADDRESS
 
 def contactus(request):
     errors = []
@@ -18,7 +21,7 @@ def contactus(request):
                 request.POST['contact-name'],
                 request.POST['contact-message'],
                 request.POST['contact-email'],
-                ['xbartolone@gmail.com'],#email address where message is sent.
+                [GEOAVALANCHE_EMAIL_ADDRESS],#email address where message is sent.
             )
             #return HttpResponse(json.dumps({"success":True}), content_type="application/json")
             return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'), {'errors': errors})
