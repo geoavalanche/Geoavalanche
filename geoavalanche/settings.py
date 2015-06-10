@@ -40,6 +40,9 @@ try:
 except ImportError:
     pass
 
+# Set debug configuration
+# DEBUG = True
+
 # Additional directories which hold static files
 STATICFILES_DIRS.append(
     os.path.join(LOCAL_ROOT, "static"),
@@ -59,3 +62,29 @@ LOCALE_PATHS = (
     os.path.join(LOCAL_ROOT, 'locale'),
     ) + LOCALE_PATHS
 
+INSTALLED_APPS = (
+                  'twitter_tag',
+                  'django_mailgun',
+                 ) + INSTALLED_APPS
+
+# Make sure to replace with your own values, theses are just made up
+#
+##Twitter timeline projref: https://github.com/coagulant/django-twitter-tag
+# Your access token: Access token
+TWITTER_OAUTH_TOKEN = ''
+# Your access token: Access token secret
+TWITTER_OAUTH_SECRET = ''
+# OAuth settings: Consumer key
+TWITTER_CONSUMER_KEY = ''
+# OAuth settings: Consumer secret
+TWITTER_CONSUMER_SECRET = ''
+
+GEOAVALANCHE_EMAIL_ADDRESS = 'geoavalanche@icloud.com'
+
+# if DEBUG:
+#	EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+##Mailgun service configuration projref: https://github.com/BradWhittington/django-mailgun
+EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+MAILGUN_ACCESS_KEY = ''
+MAILGUN_SERVER_NAME = ''
+# 
