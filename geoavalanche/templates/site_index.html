@@ -4,13 +4,14 @@
 This is where you can override the hero area block. You can simply modify the content below or replace it wholesale to meet your own needs. 
 {% endcomment %}
   {% block hero %}
+  {% include "_slider.html" %}
   <div class="jumbotron">
     <div class="container">
-      <h1>{% trans "Welcome" %}</h1>
-      <p>{% blocktrans %}GeoAvalanche is a snow avalanche information system for sharing geospatial data and maps about the risk in the mountains you are going to visit.{% endblocktrans %}</p>
-      <p>{% blocktrans %}Every avalanche has a place{% endblocktrans %}</p>
-      <p>{% blocktrans %}If you have any questions about the system, join our <a href="https://groups.google.com/d/forum/geoavalanche-users">mailing list</a>.{% endblocktrans %}</p>
-      <span>{% trans 'Need help?' %} <a href="http://docs.geonode.org/en/latest/tutorials/users/quickstart/index.html">{% trans 'Getting Started' %}</a></span>
+      <h1>{% trans "Every avalanche has a place" %}</h1>
+      <p><h3>{% blocktrans %}GeoAvalanche is a snow avalanche information system for sharing avalanche data and maps about the risk in the mountains you are going to visit.{% endblocktrans %}</h3></p>
+      <p>{% blocktrans %}We are currently in the early beta preview. Registration will come later on!{% endblocktrans %}</p>
+      <p>{% blocktrans %}If you would like to join our community and create your own maps then don't miss to <a href="#contact">Contact Us</a>.{% endblocktrans %}</p>
+      <span>{% trans 'Need help?' %} <a href="#">{% trans 'Getting Started' %}</a></span>
     </div>
   </div>
   {% endblock %}

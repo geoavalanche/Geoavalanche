@@ -110,7 +110,7 @@
 
     <div class="alert alert-danger alert-dismissible" role="alert" id="ieflag" style="display:none">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h1>You are using an outdated browser that is not supported by GeoNode.</h1>
+      <h1>You are using an outdated browser that is not supported by GeoAvalanche.</h1>
       <p>Please use a <strong>modern browser</strong> like Mozilla Firefox, Google Chrome or Safari.</p>
     </div>
 
@@ -142,13 +142,15 @@
         	    <div class="col-lg-2">
         	      <h4>Apps</h4> <!-- #@TODO Add translation -->
         	      <p>
-              		<a href="#"> Lorem Ipsum </a> <!-- #@TODO Add translation -->
+              		<a href="http://geoavalanche.org/incident/"> Crowdsourcing </a> <!-- #@TODO Add translation -->
               		<br>
-              		<a href="#"> Lorem Ipsum </a> <!-- #@TODO Add translation -->
+              		<a href="#"> OpenPeaks </a> <!-- #@TODO Add translation -->
               		<br>
-              		<a href="#"> Lorem Ipsum </a> <!-- #@TODO Add translation -->
+                  <a href="#"> Statistics </a> <!-- #@TODO Add translation -->
+                  <br>
+              		<a href="#"> Bulletins </a> <!-- #@TODO Add translation -->
               		<br>
-              		<a href="#"> Lorem Ipsum </a> <!-- #@TODO Add translation -->
+              		<a href="#"> API </a> <!-- #@TODO Add translation -->
                 </p>
         	    </div>
               {% include "contactus.html" %}
@@ -314,6 +316,7 @@
     {% include 'autocomplete_light/static.html' %}
     <script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
     {% block extra_script %}{% endblock extra_script %}
+    {% include '_slider_js.html' %}
     <script type="text/javascript">
         var autocomplete = $('#search_input').yourlabsAutocomplete({
             url: '{% url "autocomplete_light_autocomplete" "ResourceBaseAutocomplete" %}',
@@ -347,6 +350,5 @@
         };
     </script>
     <script type="text/javascript" src="{% url "lang" %}"></script>
-
   </body>
 </html>
