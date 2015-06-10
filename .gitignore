@@ -2,3 +2,4 @@ geoavalanche.egg-info
 *.DS_Store
 *.pyc
 *.gitignore
+*.prod
