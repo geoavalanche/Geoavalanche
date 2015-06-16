@@ -87,4 +87,4 @@ GEOAVALANCHE_EMAIL_ADDRESS = 'geoavalanche@icloud.com'
 EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
 MAILGUN_ACCESS_KEY = ''
 MAILGUN_SERVER_NAME = ''
-# 
+#
