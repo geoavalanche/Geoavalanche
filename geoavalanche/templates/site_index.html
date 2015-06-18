@@ -4,7 +4,10 @@
 This is where you can override the hero area block. You can simply modify the content below or replace it wholesale to meet your own needs. 
 {% endcomment %}
   {% block hero %}
-  {% include "_slider.html" %}
+  <!-- template include for slider without jquery -->
+  {% include "_slider_nojq.html" %}
+  <!-- template include for slider with jquery -->
+  {#% include "_slider.html" %#}
   <div class="jumbotron">
     <div class="container">
       <h1>{% trans "Every avalanche has a place" %}</h1>

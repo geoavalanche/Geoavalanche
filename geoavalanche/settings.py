@@ -41,7 +41,7 @@ except ImportError:
     pass
 
 # Set debug configuration
-# DEBUG = True
+DEBUG = True
 
 # Additional directories which hold static files
 STATICFILES_DIRS.append(
