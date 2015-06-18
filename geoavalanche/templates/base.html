@@ -33,6 +33,8 @@
         }
       </style>
     <![endif]-->
+    <!-- template include when using slider without jquery -->
+    {% include '_slider_js_nojq.html' %}
   </head>
 
   <body class="{% block body_class %}{% endblock %}">
@@ -316,7 +318,8 @@
     {% include 'autocomplete_light/static.html' %}
     <script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
     {% block extra_script %}{% endblock extra_script %}
-    {% include '_slider_js.html' %}
+    <!-- template include when using slider with jquery -->
+    {#% include '_slider_js.html' %#}
     <script type="text/javascript">
         var autocomplete = $('#search_input').yourlabsAutocomplete({
             url: '{% url "autocomplete_light_autocomplete" "ResourceBaseAutocomplete" %}',
