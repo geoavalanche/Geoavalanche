@@ -3,3 +3,4 @@ geoavalanche.egg-info
 *.pyc
 *.gitignore
 *.prod
+*.conf
