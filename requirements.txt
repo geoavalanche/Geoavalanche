@@ -1,0 +1,2 @@
+django-twitter-tag==1.2.1
+django-mailgun==0.9.1
