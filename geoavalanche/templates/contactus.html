@@ -1,7 +1,8 @@
 {% load i18n %}
-<!-- {% block extra_head %}
-<script type="text/javascript" src="{{ STATIC_URL }}geoavalanche/js/mymodal.js"></script>
-{% endblock %} -->
+{% block extra_head %}
+<!-- <script type="text/javascript" src="{{ STATIC_URL }}geoavalanche/js/mymodal.js"></script> -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
 
 <form id="contact" action="contact/" method="post" accept-charset="utf-8">
 {% csrf_token %}
@@ -23,6 +24,13 @@
 		<label for="contact-message" class="col-lg-2 control-label">Message</label> <!-- #@TODO Add translation -->
 		<div class="col-lg-10">
 			<textarea name="contact-message" id="contact-message" class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
+		</div>
+	</div>
+	<div class="form-group col-lg-12">
+		<label for="recaptcha" class="col-lg-2 control-label"></label>
+		<div class="col-lg-10">
+			<div class="g-recaptcha" data-sitekey="{{ NORECAPTCHA_SITE_KEY }}">
+			</div>
 		</div>
 	</div>
 	<div class="form-group col-lg-12">

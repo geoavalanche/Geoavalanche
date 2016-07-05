@@ -7,6 +7,7 @@ from django.shortcuts import render, render_to_response
 
 GEOAVALANCHE_EMAIL_ADDRESS = settings.GEOAVALANCHE_EMAIL_ADDRESS
 
+
 def contactus(request):
     errors = []
     if request.method == 'POST':

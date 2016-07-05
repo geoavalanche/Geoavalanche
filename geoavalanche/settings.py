@@ -67,6 +67,12 @@ INSTALLED_APPS = (
                   'django_mailgun',
                  ) + INSTALLED_APPS
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    # The context processor below adds things like GeoAvalanche settings
+    # to all pages that use a RequestContext
+    'geoavalanche.context_processors.geoavalanche_settings',
+) + TEMPLATE_CONTEXT_PROCESSORS
+
 # Make sure to replace with your own values, theses are just made up
 #
 ##Twitter timeline projref: https://github.com/coagulant/django-twitter-tag
@@ -79,7 +85,7 @@ TWITTER_CONSUMER_KEY = ''
 # OAuth settings: Consumer secret
 TWITTER_CONSUMER_SECRET = ''
 
-GEOAVALANCHE_EMAIL_ADDRESS = 'geoavalanche@icloud.com'
+GEOAVALANCHE_EMAIL_ADDRESS = 'geoavalanche@gmail.com'
 
 # if DEBUG:
 #	EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -87,4 +93,8 @@ GEOAVALANCHE_EMAIL_ADDRESS = 'geoavalanche@icloud.com'
 EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
 MAILGUN_ACCESS_KEY = ''
 MAILGUN_SERVER_NAME = ''
+#
+##Norecaptcha service configuration projref: https://github.com/ImaginaryLandscape/django-nocaptcha-recaptcha
+NORECAPTCHA_SITE_KEY = '' #os.environ.get('NORECAPTCHA_SITE_KEY', "")
+NORECAPTCHA_SECRET_KEY = '' #os.environ.get('NORECAPTCHA_SECRET_KEY', "")
 #

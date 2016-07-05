@@ -75,8 +75,12 @@ div.col-lg-10 {
   width: 74%;
 }
 
+div.col-lg-12 {
+  width: 105%;
+}
+
 #btncontact {
-  margin-left: 35px;
+  margin-left: 34px;
 }
 
 /* Add line to divide footer */
@@ -84,3 +88,9 @@ div.col-lg-10 {
   border-color: #555 -moz-use-text-color -moz-use-text-color;
 }
 
+/* Custom norecaptcha width */
+
+@media screen and (max-height: 570px){
+#rc-imageselect, .g-recaptcha {transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;}
+
+/* end custom properties */
