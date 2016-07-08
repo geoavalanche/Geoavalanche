@@ -1,6 +1,7 @@
+INSTALL.md
 geoavalanche.egg-info
 *.DS_Store
 *.pyc
-*.gitignore
+.gitignore
 *.prod
 *.conf
