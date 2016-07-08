@@ -23,6 +23,11 @@ ul.nav.navbar-nav.navbar-right {
   padding-top: 40px;
 }
 
+/* adjust top for the slider */
+#slider1_container {
+  top: -8px;
+}
+
 /* rounded corner for images */
 .items-list .thumb img {
   border: 1px solid #CCC;
