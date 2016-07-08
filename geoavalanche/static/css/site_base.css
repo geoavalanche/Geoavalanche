@@ -18,6 +18,11 @@ ul.nav.navbar-nav.navbar-right {
   margin-top: -18px;
 }
 
+/* adjust top padding for messages */
+#wrap {
+  padding-top: 40px;
+}
+
 /* rounded corner for images */
 .items-list .thumb img {
   border: 1px solid #CCC;
